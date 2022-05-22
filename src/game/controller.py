@@ -1,6 +1,7 @@
 import random
 from dataclasses import dataclass
 from enum import Enum
+from typing import Set, Tuple
 
 from kivy.logger import Logger
 
@@ -72,7 +73,7 @@ class Cell:
         return self.controller.board.index(self)
 
     @property
-    def position(self) -> tuple[int, int]:
+    def position(self) -> Tuple[int, int]:
         index = self.cell_index
         return index // self.controller.rows, index % self.controller.columns
 
@@ -87,7 +88,7 @@ class Cell:
         Logger.debug(f"App: {'En' if value else 'Dis'}abling cell {self.number}")
         self._is_enabled = value
 
-    def get_neighbor_positions(self) -> set[int]:
+    def get_neighbor_positions(self) -> Set[int]:
         row, column = self.position
         neighbor_positions = set()
         if row > 0:
