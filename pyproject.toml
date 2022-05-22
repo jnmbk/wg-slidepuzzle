@@ -28,3 +28,8 @@ exclude_lines = [
     "if __name__ == .__main__.:",
     "def main..:",
 ]
+
+[tool.coverage.run]
+omit = [
+    "src/game/main.py",
+]

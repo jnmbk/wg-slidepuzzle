@@ -4,7 +4,7 @@ from kivy.uix.button import Button
 from .controller import CellType, Controller
 
 
-class Game(App):  # pragma: no cover
+class Game(App):
     def build(self):
         self.load_kv()
 
